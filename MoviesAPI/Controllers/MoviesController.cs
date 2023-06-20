@@ -7,6 +7,7 @@ namespace MoviesAPI.Controllers
     [ApiController]
     public class MoviesController : ControllerBase
     {
+        private readonly IMapper _mapper;
         private readonly IMoviesService _moviesService;
         private readonly IGenresService _genresService;
 
@@ -19,17 +20,19 @@ namespace MoviesAPI.Controllers
 
         private long _maxAllowedPosterSize = _sizeinMB * 1024 * 1024;
 
-        public MoviesController(IMoviesService moviesService, IGenresService genresService)
+        public MoviesController(IMoviesService moviesService, IGenresService genresService, IMapper mapper)
         {
             _moviesService = moviesService;
             _genresService = genresService;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAllAsync()
         {
             var movies = await _moviesService.GetAll();
-            return Ok(movies);
+            var data = _mapper.Map<IEnumerable<MovieDetailsDto>>(movies);
+            return Ok(data);
         }
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromForm]MovieDto dto)
@@ -51,15 +54,8 @@ namespace MoviesAPI.Controllers
 
             await dto.Poster.CopyToAsync(dataStream);
 
-            Movie movie = new() 
-            {
-                GenreId = dto.GenreId,
-                Title = dto.Title,
-                ReleaseDate = dto.ReleaseDate,
-                Rate = dto.Rate,
-                StoryLine = dto.StoryLine,
-                Poster= dataStream.ToArray()
-            };
+            Movie movie = _mapper.Map<Movie>(dto);
+            movie.Poster = dataStream.ToArray();
             await _moviesService.Post(movie);
             return Ok("element added");
         }

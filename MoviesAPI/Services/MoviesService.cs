@@ -13,7 +13,7 @@ namespace MoviesAPI.Services
 
         public async Task<IEnumerable<Movie>> GetAll()
         {
-            return await _context.Movies.Include(m => m.Genre).OrderBy(g => g.Title).ToListAsync();
+            return await _context.Movies.OrderBy(g => g.Title).Include(m => m.Genre).ToListAsync();
         }
 
         public async Task<Movie> GetById(int id)

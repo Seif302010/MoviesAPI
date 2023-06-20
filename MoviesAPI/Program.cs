@@ -1,6 +1,3 @@
-using MoviesAPI.Models;
-using MoviesAPI.Services;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -14,6 +11,8 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddTransient<IGenresService, GenresService>();
 builder.Services.AddTransient<IMoviesService, MoviesService>();
+
+builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddCors();
 
