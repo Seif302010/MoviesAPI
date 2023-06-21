@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace MoviesAPI.Controllers
 {
@@ -34,6 +36,8 @@ namespace MoviesAPI.Controllers
             var data = _mapper.Map<IEnumerable<MovieDetailsDto>>(movies);
             return Ok(data);
         }
+
+        [Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromForm]MovieDto dto)
         {
@@ -60,8 +64,9 @@ namespace MoviesAPI.Controllers
             return Ok("element added");
         }
 
+        [Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAsync(int id, [FromForm] MovieDto dto)
+        public async Task<IActionResult> PutAsync(int id, [FromForm]MovieDto dto)
         {
             var movie = await _moviesService.GetById(id);
             if (movie is null)
@@ -95,6 +100,7 @@ namespace MoviesAPI.Controllers
             return Ok("element Updated");
         }
 
+        [Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
