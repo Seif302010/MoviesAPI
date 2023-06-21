@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MoviesAPI.Models;
 
@@ -11,9 +12,10 @@ using MoviesAPI.Models;
 namespace MoviesAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230621181202_SeedRoles")]
+    partial class SeedRoles
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,15 +53,15 @@ namespace MoviesAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "602a0284-a193-40ef-bb94-10eaa042445f",
-                            ConcurrencyStamp = "47d22932-22cc-45b7-8bf3-2deafa6a49c0",
+                            Id = "3da8e281-f729-4ccd-9320-dba0df2d8214",
+                            ConcurrencyStamp = "c0379bc2-f157-4d21-aa08-c30cbda63dee",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "7888b2ef-b592-47cd-9370-9013c76e7e19",
-                            ConcurrencyStamp = "e9913721-a61b-4260-b10d-5dbe0ba6a0e8",
+                            Id = "b2104317-c15d-43b2-8fd5-0ff8aae3fc34",
+                            ConcurrencyStamp = "35536483-04cd-4327-bdd5-e221d27d58f3",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -184,7 +186,6 @@ namespace MoviesAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
@@ -209,7 +210,7 @@ namespace MoviesAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
@@ -221,7 +222,6 @@ namespace MoviesAPI.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("UserName")
-                        .IsRequired()
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
@@ -234,10 +234,6 @@ namespace MoviesAPI.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.HasIndex("UserName", "Email", "PhoneNumber")
-                        .IsUnique()
-                        .HasFilter("[PhoneNumber] IS NOT NULL");
 
                     b.ToTable("Users", "security");
                 });
