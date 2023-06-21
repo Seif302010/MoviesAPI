@@ -1,0 +1,474 @@
+{
+	"info": {
+		"_postman_id": "5b276c43-4335-4584-8071-82582a9a5b9c",
+		"name": "MovieAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Genres",
+			"item": [
+				{
+					"name": "GET",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44356/api/Genres",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44356",
+							"path": [
+								"api",
+								"Genres"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Name",
+									"value": "",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44356/api/Genres/<Id>",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44356",
+							"path": [
+								"api",
+								"Genres",
+								"<Id>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Name",
+									"value": "",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44356/api/Genres/<Id>",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44356",
+							"path": [
+								"api",
+								"Genres",
+								"<Id>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Horror\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44356/api/Genres/<Id>",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44356",
+							"path": [
+								"api",
+								"Genres",
+								"<Id>"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "GET",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Horror\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44356/api/Movies",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44356",
+							"path": [
+								"api",
+								"Movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Title",
+									"value": "",
+									"type": "default"
+								},
+								{
+									"key": "ReleaseDate",
+									"value": "",
+									"type": "default"
+								},
+								{
+									"key": "Rate",
+									"value": "",
+									"type": "default"
+								},
+								{
+									"key": "StoryLine",
+									"value": "",
+									"type": "default"
+								},
+								{
+									"key": "GenreId",
+									"value": "",
+									"type": "default"
+								},
+								{
+									"key": "Poster",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44356/api/Movies/<Id>",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44356",
+							"path": [
+								"api",
+								"Movies",
+								"<Id>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Title",
+									"value": "",
+									"type": "default"
+								},
+								{
+									"key": "ReleaseDate",
+									"value": "",
+									"type": "default"
+								},
+								{
+									"key": "Rate",
+									"value": "",
+									"type": "default"
+								},
+								{
+									"key": "StoryLine",
+									"value": "",
+									"type": "default"
+								},
+								{
+									"key": "GenreId",
+									"value": "",
+									"type": "default"
+								},
+								{
+									"key": "Poster",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44356/api/Movies/<Id>",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44356",
+							"path": [
+								"api",
+								"Movies",
+								"<Id>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Horror\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44356/api/Movies/<Id>",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44356",
+							"path": [
+								"api",
+								"Movies",
+								"<Id>"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Management",
+			"item": [
+				{
+					"name": "AdminOnly",
+					"item": [
+						{
+							"name": "addToRole",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "UserId",
+											"value": "",
+											"type": "default"
+										},
+										{
+											"key": "RoleName",
+											"value": "",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://localhost:44356/api/controller/addToRole",
+									"protocol": "https",
+									"host": [
+										"localhost"
+									],
+									"port": "44356",
+									"path": [
+										"api",
+										"controller",
+										"addToRole"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "UserName",
+									"value": "",
+									"contentType": "",
+									"type": "default"
+								},
+								{
+									"key": "Email",
+									"value": "",
+									"type": "default"
+								},
+								{
+									"key": "Password",
+									"value": "",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:44356/api/controller/register",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44356",
+							"path": [
+								"api",
+								"controller",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:44356/api/controller/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44356",
+							"path": [
+								"api",
+								"controller",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
